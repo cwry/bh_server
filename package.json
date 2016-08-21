@@ -4,7 +4,7 @@
   "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cwry/bh_server.git"
