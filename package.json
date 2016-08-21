@@ -2,12 +2,9 @@
   "name": "bh_server",
   "version": "0.0.1",
   "main": "src/main.js",
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-0"
-    ]
-  },
+  "scripts": {
+    "start": "node src/main.js"
+  }
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cwry/bh_server.git"
