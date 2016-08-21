@@ -11,7 +11,7 @@ io.serveClient(false);
 
 io.on("connection", function (socket){
     console.log("client connected");
-    socket.emit("connection test", {message : "this is a message", num : 2.5, arr : [0, 1, 2]});
+    socket.emit("connection test", {message : "this is a message", num : 2.5, arr : [0, 1, 2], jaggedArr : [0.5, "one point five", 2.5]});
 })
 
 server.listen(process.env.PORT);
