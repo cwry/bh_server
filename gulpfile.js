@@ -6,7 +6,18 @@ var watchify = require('watchify');
 var babel = require('babelify');
 
 function compile(watch) {
-  var bundler = watchify(browserify('./src/main.js', { debug: true }).transform(babel));
+  var bundler = watchify(browserify('./src/main.js', { 
+    debug: true,
+    browserField : false,
+    builtins : false,
+    commondir : false,
+    insertGlobalVars : {
+      process: undefined,
+      global: undefined,
+      'Buffer.isBuffer': undefined,
+      Buffer: undefined 
+    }
+  }).transform(babel));
 
   function rebundle() {
     bundler.bundle()
