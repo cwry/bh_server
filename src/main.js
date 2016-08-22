@@ -22,4 +22,4 @@ io.on("connection", function (socket){
     socket.emit("connection test", {message : "this is a message", num : 2.5, arr : [0, 1, 2], jaggedArr : [0.5, "one point five", 2.5], objArray : [{message : "first sub message"}, {message : "second sub message"}, {message : "third sub message"}]});
 })
 
-server.listen(process.env.OPENSHIFT_NODEJS_PORT);
+server.listen(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080, process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
