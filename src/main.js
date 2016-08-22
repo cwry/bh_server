@@ -1,6 +1,14 @@
 const app = require("express")();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
+const mongoose = require("mongoose");
+const db = mongoose.connect("mongodb://admin:eUWRsNLvnXub@127.0.0.1:27017/bhserv").connection;
+
+
+db.on("error", console.error.bind(console, "connection error:"));
+db.once('open', function() {
+  console.log("connected to db");
+});
 
 app.get("/", function(req, res){
     console.log("http request");
