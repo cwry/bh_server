@@ -1,16 +1,11 @@
+"use strict";
+
 const User = require("./models/user_model");
 
-module.exports = function(io){
-    io.serveClient(false);
-    io.on("connection", onConnection);
-    io.on("register", onRegister);
-    io.on("login", onLogin);
-}
+const object = {};
 
-function onConnection(socket){
-    console.log("client connected");
-    socket.emit("connection test", {message : "this is a message", num : 2.5, arr : [0, 1, 2], jaggedArr : [0.5, "one point five", 2.5], objArray : [{message : "first sub message"}, {message : "second sub message"}, {message : "third sub message"}]});
-}
+module.exports = 
+
 
 function onRegister(data, cb){
     console.log("registering user: " + data.username);
